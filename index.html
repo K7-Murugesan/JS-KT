@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Javascript Session </h1>
+
+    <div id="root" >
+        <button id="btn"> Event Propagation </button>
+    </div>
+    <script  src="index.js">
+        
+    </script>
+    <script>
+
+        let btn = document.getElementById("btn");
+        btn.addEventListener( 'click', function(e){
+            e.stopPropagation()
+            console.log( "Target Event Triggered" );
+            alert( "hiiii"  )
+        }  )
+
+        let root = document.getElementById("root");
+        root.addEventListener( 'click', function(){
+            console.log( "Root Element Triggered" );
+        }, true )
+
+        var globalVariable = "Acces me anywhere";
+        const globalVariable1 = "Acces me anywhere 1";
+
+        console.log( window.globalVariable  );
+        console.log( globalThis.window.Animation.prototype.finished );
+
+
+    </script>
+</body>
+</html>
